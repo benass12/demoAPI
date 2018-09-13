@@ -13,10 +13,11 @@ public class UserAccountsService {
     @Autowired
     private UserAccountsRepository userAccountsRepository;
 
-    public Iterable<UserAccounts> getAllUserAccounts(){
+    public Iterable<UserAccounts> getAllUserAccounts() {
         return userAccountsRepository.findAll();
     }
-    public void addUserAccount(UserAccounts userAccounts){
+
+    public void addUserAccount(UserAccounts userAccounts) {
         userAccountsRepository.save(userAccounts);
     }
 }

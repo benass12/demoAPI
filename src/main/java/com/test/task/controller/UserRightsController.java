@@ -10,8 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.List;
-import java.util.Optional;
 
 /**
  * Created by benas on 18.7.23.
@@ -27,18 +25,18 @@ public class UserRightsController {
     private CustomerRepository customerRepository;
 
     @RequestMapping(value = "/user_rights/add/", method = RequestMethod.POST)
-    public void addUserRight(@Valid @RequestBody UserRights userRights){
+    public void addUserRight(@Valid @RequestBody UserRights userRights) {
         userRightsService.addUserRights(userRights);
     }
 
     @RequestMapping(value = "/user_rights/get/", method = RequestMethod.GET)
-    public Iterable<UserRights> getAllUserRights(){
+    public Iterable<UserRights> getAllUserRights() {
         return userRightsService.getAllUserRights();
     }
 
     @RequestMapping(value = "/user/user_rights/add/", method = RequestMethod.POST)
-    public void addUserRightsToUserAndCustomer(@Valid @RequestBody UserRights userRights, @RequestParam int userId, int customerId){
-        if(userRepository.findById(userId).isPresent() && customerRepository.findById(customerId).isPresent()) {
+    public void addUserRightsToUserAndCustomer(@Valid @RequestBody UserRights userRights, @RequestParam int userId, int customerId) {
+        if (userRepository.findById(userId).isPresent() && customerRepository.findById(customerId).isPresent()) {
             User user = userRepository.findById(userId).get();
             Customer customer = customerRepository.findById(customerId).get();
             userRights.setUser(user);

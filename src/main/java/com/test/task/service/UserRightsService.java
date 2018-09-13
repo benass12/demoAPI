@@ -1,12 +1,10 @@
 package com.test.task.service;
 
 import com.test.task.entity.UserRights;
-import com.test.task.repository.UserRepository;
 import com.test.task.repository.UserRightsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.Id;
 import java.util.Optional;
 
 /**
@@ -17,14 +15,15 @@ public class UserRightsService {
     @Autowired
     private UserRightsRepository userRightsRepository;
 
-    public Iterable<UserRights> getAllUserRights(){
+    public Iterable<UserRights> getAllUserRights() {
         return userRightsRepository.findAll();
     }
-    public Optional<UserRights> findById(Integer Id){
+
+    public Optional<UserRights> findById(Integer Id) {
         return userRightsRepository.findById(Id);
     }
 
-    public void addUserRights(UserRights userRights){
+    public void addUserRights(UserRights userRights) {
         userRightsRepository.save(userRights);
     }
 

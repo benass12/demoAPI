@@ -3,6 +3,7 @@ package com.test.task.repository;
 import com.test.task.entity.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+
 import java.util.Optional;
 
 /**

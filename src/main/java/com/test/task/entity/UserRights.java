@@ -3,7 +3,6 @@ package com.test.task.entity;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
-import java.util.List;
 
 /**
  * Created by benas on 18.7.23.
@@ -49,6 +48,7 @@ public class UserRights {
     public void setUser(User user) {
         this.user = user;
     }
+
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }

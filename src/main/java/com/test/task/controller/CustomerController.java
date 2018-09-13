@@ -21,16 +21,18 @@ public class CustomerController {
     private UserRepository userRepository;
 
     @RequestMapping(value = "/customer/add/", method = RequestMethod.POST)
-    public void addNewCustomer(@Valid @RequestBody Customer customer){
+    public void addNewCustomer(@Valid @RequestBody Customer customer) {
         customerService.addCustomer(customer);
     }
+
     @RequestMapping(value = "/customer/get/", method = RequestMethod.GET)
-    public Iterable<Customer> getCustomers(){
+    public Iterable<Customer> getCustomers() {
         return customerService.getAllCustomers();
     }
+
     @RequestMapping(value = "/customer/user/add/", method = RequestMethod.POST)
-    public void addCustomerForUser(@Valid @RequestBody Customer customer, @RequestParam int userId){
-        if(userRepository.findById(userId).isPresent()){
+    public void addCustomerForUser(@Valid @RequestBody Customer customer, @RequestParam int userId) {
+        if (userRepository.findById(userId).isPresent()) {
             User user = userRepository.findById(userId).get();
             customer.setUser(user);
             customerService.addCustomer(customer);

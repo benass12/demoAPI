@@ -79,13 +79,15 @@ public class User {
         this.defaultLanguage = defaultLanguage;
     }
 
-    public List<UserRights> getUserRightss(){
+    public List<UserRights> getUserRightss() {
         return userRightss;
     }
-    public List<UserAccounts> getUserAccountss(){
+
+    public List<UserAccounts> getUserAccountss() {
         return userAccountss;
     }
-    public List<Customer> getCustomers(){
+
+    public List<Customer> getCustomers() {
         return customers;
     }
 

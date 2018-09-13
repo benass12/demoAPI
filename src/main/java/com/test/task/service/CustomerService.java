@@ -13,11 +13,11 @@ public class CustomerService {
     @Autowired
     private CustomerRepository customerRepository;
 
-    public Iterable<Customer> getAllCustomers(){
+    public Iterable<Customer> getAllCustomers() {
         return customerRepository.findAll();
     }
 
-    public void addCustomer(Customer customer){
+    public void addCustomer(Customer customer) {
         customerRepository.save(customer);
     }
 
