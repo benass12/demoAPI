@@ -27,6 +27,7 @@ public class Customer {
     @ManyToOne
     private User user;
 
+
     @OneToMany
     @JoinColumn(name = "customer_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
